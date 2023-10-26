@@ -69,6 +69,39 @@ func CreateItem(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(item)
 }
 
+//26/5
+// func PostTransaction(w http.ResponseWriter, r *http.Request) {
+// 	fmt.Println("Hello Tarun!")
+// 	w.Header().Set("Content-Type", "application/json")
+// 	//body, err := ioutil.ReadAll(r.Body)
+// 	var transaction Transaction
+// 	_ = json.NewDecoder(r.Body).Decode(&transaction)
+
+// 	//fmt.Println("Body: ", string(body))
+// 	// Log the transaction data to the console
+// 	fmt.Printf("Received transaction data: %+v\n", transaction)
+// 	// Process the transaction data as needed
+// 	// Define the request URL with the query parameter
+// 	requestURL := "http://localhost:8888/kafkaapp/post"
+
+// 	// Now you can log the request URL as well
+// 	fmt.Printf("Sending POST request to: %s\n", requestURL)
+
+// 	resp, err := http.Post(requestURL, "application/json", nil)
+// 	if err != nil {
+// 		http.Error(w, "Failed to send POST request", http.StatusInternalServerError)
+// 		return
+// 	}
+// 	defer resp.Body.Close()
+
+// 	if resp.StatusCode == http.StatusOK {
+// 		// Handle the response data, if needed
+
+// 	} else {
+// 		http.Error(w, "POST request failed with status code: "+strconv.Itoa(resp.StatusCode), http.StatusBadGateway)
+// 	}
+// }
+
 // UpdateItem updates an existing item
 func UpdateItem(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
